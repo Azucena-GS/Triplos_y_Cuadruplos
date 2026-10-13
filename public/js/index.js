@@ -110,7 +110,7 @@ function procesar() {
       // Triplo
       const op2Trip = stackTrip.pop();
       const op1Trip = stackTrip.pop();
-      const triIndex = triplos.length + 1;
+      const triIndex = triplos.length;
       
       triplos.push({ op: token, op1: op1Trip, op2: op2Trip });
       stackTrip.push(`(${triIndex})`);
@@ -153,7 +153,7 @@ function renderTablas(cuadruplos, triplos) {
   triplos.forEach((t, idx) => {
     tbodyTrip.innerHTML += `
       <tr>
-        <td>${idx + 1}</td>
+        <td>${idx}</td>
         <td>${t.op}</td>
         <td>${t.op1}</td>
         <td>${t.op2}</td>
