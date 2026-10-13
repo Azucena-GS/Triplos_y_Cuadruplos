@@ -1,0 +1,240 @@
+/* Paleta de Colores Profesional y Neutra */
+:root {
+  --primary: #4f46e5;         /* Índigo profesional para botones y elementos activos */
+  --primary-hover: #4338ca;
+  --bg-main: #f8fafc;         /* Gris claro suave para el fondo */
+  --card-bg: #ffffff;         /* Blanco para contenedores principales */
+  --border-color: #e2e8f0;    /* Bordes sutiles */
+  --text-main: #1e293b;       /* Gris oscuro para texto principal */
+  --text-muted: #64748b;      /* Gris medio para subtítulos y etiquetas */
+  --table-header-bg: #f1f5f9;  /* Gris neutro para encabezados de tablas */
+  --table-row-hover: #f8fafc;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  margin: 0;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.main-container {
+  max-width: 960px;
+  width: 100%;
+  background: var(--card-bg);
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border-color);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 32px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 24px;
+}
+
+.icon-heart {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+h2 {
+  color: var(--text-main);
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  margin-top: 6px;
+  font-size: 0.95rem;
+}
+
+.input-section {
+  margin-bottom: 32px;
+}
+
+.input-section label {
+  color: var(--text-main);
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.input-group {
+  display: flex;
+  gap: 12px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 12px 16px;
+  font-size: 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: var(--text-main);
+  transition: all 0.2s ease;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+button {
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  background-color: var(--primary);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+h3 {
+  color: var(--text-main);
+  border-left: 4px solid var(--primary);
+  padding-left: 12px;
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.results-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-bottom: 32px;
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .results-section {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.table-container {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+th, td {
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.9rem;
+}
+
+th {
+  background-color: var(--table-header-bg);
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr:nth-child(even) td {
+  background-color: transparent; /* Fondo uniforme para limpieza visual */
+}
+
+tr:hover td {
+  background-color: var(--table-row-hover);
+}
+
+.code-section {
+  margin-top: 32px;
+}
+
+.code-window {
+  background-color: #0f172a; /* Fondo Slate oscuro para contraste técnico */
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #1e293b;
+}
+
+.code-header {
+  background-color: #1e293b;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid #334155;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.dot.red { background-color: #ef4444; }
+.dot.yellow { background-color: #f59e0b; }
+.dot.green { background-color: #10b981; }
+
+.file-name {
+  margin-left: 8px;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+pre {
+  margin: 0;
+  padding: 20px;
+  font-family: 'Fira Code', 'Cascadia Code', Consolas, monospace;
+  font-size: 0.9rem;
+  color: #f8fafc;
+  overflow-x: auto;
+  line-height: 1.5;
+}
+
+/* Colores de resaltado de sintaxis limpios */
+pre .keyword { color: #f472b6; font-weight: 600; }
+pre .variable { color: #38bdf8; }
+pre .operator { color: #c084fc; }

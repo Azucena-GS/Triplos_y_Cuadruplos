@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triplos y Cuadruplos</title>
+    <link rel="stylesheet" href="./public/css/b5.css">
+    <link rel="stylesheet" href="./public/css/main.css">
+    <link rel="stylesheet" href="./public/css/estilos.css">
+    <script src="./public/js/b5.js"></script>
+    <script src="./public/js/poper.js"></script>
+    <script src="./public/js/leader.js"></script>
+</head>
+<body>
+  <div class="main-container">
+    <div class="header">
+      <i class="fas fa-heart-code icon-heart"></i>
+      <h2>Generador de Cuádruplos y Triplos</h2>
+    </div>
+    
+    <div class="input-section">
+      <label for="expresion"><b>Introduce la Expresión:</b></label>
+      <div class="input-group">
+        <input type="text" id="expresion" value="x = a + b * c;" placeholder="Ej: x = a + b * c;">
+        <button onclick="procesar()"><i class="fas fa-magic"></i> Generar</button>
+      </div>
+    </div>
+
+    <div class="results-section">
+      <div class="table-container">
+        <h3><i class="fas fa-table"></i> Cuádruplos:</h3>
+        <table id="tabla-cuadruplos">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Operador</th>
+              <th>Operando1</th>
+              <th>Operando2</th>
+              <th>Resultado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Se llena dinámicamente -->
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-container">
+        <h3><i class="fas fa-list-ol"></i> Triplos:</h3>
+        <table id="tabla-triplos">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Operador</th>
+              <th>Operando1</th>
+              <th>Operando2</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Se llena dinámicamente -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="code-section">
+      <h3><i class="fab fa-js-square"></i> Código equivalente en JavaScript:</h3>
+      <div class="code-window">
+        <div class="code-header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <span class="file-name">output.js</span>
+        </div>
+        <pre id="codigo-js"></pre>
+      </div>
+    </div>
+  </div>
+  <script src="./public/js/index.js"></script>
+</body>
+</html>
