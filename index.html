@@ -21,8 +21,9 @@
     <div class="input-section">
       <label for="expresion"><b>Introduce la Expresión:</b></label>
       <div class="input-group">
-        <input type="text" id="expresion" value="x = a + b * c;" placeholder="Ej: x = a + b * c;">
-        <button onclick="procesar()"><i class="fas fa-magic"></i> Generar</button>
+        <input type="text" id="expresion" value="" placeholder="Ej: x = a + b * c;">
+        <button type="button" onclick="procesar()"><i class="fas fa-magic"></i> Generar</button>
+        <button type="button" id="clear-button" onclick="limpiar()"><i class="fas fa-trash"></i> Borrar</button>
       </div>
     </div>
 

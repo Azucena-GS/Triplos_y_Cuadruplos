@@ -3,12 +3,10 @@ let tempCounter = 0;
 function resetCounter() {
   tempCounter = 0;
 }
-
 function newTemp() {
   tempCounter++;
   return `t${tempCounter}`;
 }
-
 // Tokenizador básico para expresiones matemáticas simples
 function tokenize(exp) {
   const tokens = [];
@@ -26,7 +24,6 @@ function tokenize(exp) {
   if (current.trim()) tokens.push(current.trim());
   return tokens;
 }
-
 // Convierte infija a posfija (Algoritmo Shunting-yard)
 function infixToPostfix(tokens) {
   const precedence = { '+': 1, '-': 1, '*': 2, '/': 2 };
@@ -61,10 +58,27 @@ function infixToPostfix(tokens) {
   return output;
 }
 
+function clearResults() {
+  document.querySelector('#tabla-cuadruplos tbody').innerHTML = '';
+  document.querySelector('#tabla-triplos tbody').innerHTML = '';
+  document.getElementById('codigo-js').innerHTML = '';
+}
+
+function limpiar() {
+  document.getElementById('expresion').value = '';
+  clearResults();
+  document.getElementById('expresion').focus();
+}
+
 function procesar() {
   resetCounter();
   let rawExp = document.getElementById('expresion').value;
   rawExp = rawExp.replace(';', '').trim();
+
+  if (!rawExp) {
+    clearResults();
+    return;
+  }
 
   if (!rawExp.includes('=')) {
     alert('Por favor ingresa una asignación válida (ej: x = a + b * c;)');
@@ -160,5 +174,8 @@ function renderTablas(cuadruplos, triplos) {
   jsBox.innerHTML = jsCodeHTML;
 }
 
-// Ejecutar al cargar la página
-window.onload = procesar;
+// Ejecutar al cargar la página sin pre-cargar una expresión
+window.onload = () => {
+  clearResults();
+  document.getElementById('expresion').focus();
+};
